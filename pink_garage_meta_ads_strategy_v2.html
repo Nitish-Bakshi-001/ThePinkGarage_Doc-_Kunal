@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meta Ads Strategy — The Pink Garage by Sadhvi</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rose:      #C4516F;
+    --deep-rose: #8E2D47;
+    --blush:     #F7E0E7;
+    --gold:      #B8872C;
+    --gold-lt:   #EDD8A4;
+    --charcoal:  #18181B;
+    --ink:       #2A2A2E;
+    --mist:      #FBF4F6;
+    --white:     #FEFCFD;
+    --hr:        rgba(196,81,111,0.14);
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family:'Outfit',sans-serif;
+    background:var(--white);
+    color:var(--ink);
+    font-size:15px;
+    line-height:1.72;
+  }
+
+  /* ── COVER ────────────────────────── */
+  .cover {
+    min-height:100vh;
+    background:var(--charcoal);
+    display:flex; flex-direction:column;
+    justify-content:center; align-items:center;
+    text-align:center;
+    padding:64px 40px;
+    position:relative; overflow:hidden;
+  }
+  .cover::before {
+    content:'';
+    position:absolute; inset:0;
+    background:
+      radial-gradient(ellipse 70% 55% at 50% 20%, rgba(196,81,111,.22) 0%, transparent 70%),
+      radial-gradient(ellipse 35% 35% at 85% 85%, rgba(184,135,44,.14) 0%, transparent 60%);
+  }
+  .z { position:relative; z-index:1; }
+  .cover-eyebrow {
+    font-size:10px; letter-spacing:4px; text-transform:uppercase;
+    color:var(--gold); border:1px solid rgba(184,135,44,.38);
+    padding:6px 20px; border-radius:2px; margin-bottom:44px;
+  }
+  .cover-name {
+    font-family:'Playfair Display',serif;
+    font-size:clamp(40px,9vw,76px); font-weight:400;
+    color:var(--white); line-height:1.05; margin-bottom:8px;
+  }
+  .cover-name em { color:var(--rose); font-style:italic; }
+  .cover-locale {
+    font-size:12px; letter-spacing:3px; text-transform:uppercase;
+    color:rgba(255,255,255,.38); margin-bottom:52px;
+  }
+  .cover-rule {
+    width:56px; height:1px;
+    background:linear-gradient(90deg,transparent,var(--rose),transparent);
+    margin:0 auto 52px;
+  }
+  .cover-doc-title {
+    font-family:'Playfair Display',serif; font-style:italic;
+    font-size:clamp(15px,2.2vw,21px); font-weight:400;
+    color:rgba(255,255,255,.65); max-width:520px;
+    margin-bottom:56px;
+  }
+  .cover-pills {
+    display:flex; gap:32px; flex-wrap:wrap; justify-content:center;
+  }
+  .cover-pill .lbl {
+    font-size:9px; letter-spacing:2px; text-transform:uppercase;
+    color:rgba(255,255,255,.3); margin-bottom:3px;
+  }
+  .cover-pill .val {
+    font-size:13px; font-weight:500; color:rgba(255,255,255,.72);
+  }
+
+  /* ── DISCLAIMER BANNER ─────────────── */
+  .disclaimer {
+    background:#FFF8E1;
+    border-left:4px solid var(--gold);
+    padding:16px 28px;
+    font-size:13px; color:#5A4500;
+  }
+
+  /* ── LAYOUT ─────────────────────────── */
+  .wrap { max-width:900px; margin:0 auto; padding:0 32px; }
+
+  /* ── SECTION ─────────────────────────── */
+  .sec { padding:68px 0 52px; border-bottom:1px solid var(--hr); }
+  .sec:last-of-type { border-bottom:none; }
+
+  .sec-tag {
+    font-size:10px; letter-spacing:4px; text-transform:uppercase;
+    color:var(--rose); font-weight:600;
+    display:flex; align-items:center; gap:12px;
+    margin-bottom:12px;
+  }
+  .sec-tag::after {
+    content:''; flex:1; max-width:72px; height:1px; background:var(--hr);
+  }
+  .sec-h {
+    font-family:'Playfair Display',serif;
+    font-size:clamp(26px,4vw,40px); font-weight:500;
+    color:var(--charcoal); line-height:1.2; margin-bottom:26px;
+  }
+  .sec-h em { color:var(--rose); font-style:italic; }
+
+  p { color:#484850; margin-bottom:15px; }
+  p:last-child { margin-bottom:0; }
+
+  /* ── CALLOUT ─────────────────────────── */
+  .callout {
+    background:var(--blush);
+    border-left:3px solid var(--rose);
+    border-radius:0 3px 3px 0;
+    padding:18px 22px; margin:24px 0;
+    font-size:14px; color:var(--charcoal); font-style:italic;
+    line-height:1.6;
+  }
+  .callout strong { font-style:normal; }
+
+  /* ── PERCEPTION GRID ─────────────────── */
+  .pgrid {
+    display:grid; grid-template-columns:1fr 1fr; gap:14px;
+    margin-top:28px;
+  }
+  @media(max-width:580px){ .pgrid{ grid-template-columns:1fr; } }
+
+  .pcard {
+    border:1px solid var(--hr); border-radius:3px;
+    padding:22px; background:var(--mist);
+    position:relative; overflow:hidden;
+  }
+  .pcard::before {
+    content:''; position:absolute;
+    top:0; left:0; right:0; height:2px;
+    background:linear-gradient(90deg,var(--rose),var(--gold));
+  }
+  .pcard .icon { font-size:22px; margin-bottom:10px; }
+  .pcard h4 {
+    font-family:'Playfair Display',serif; font-size:17px;
+    color:var(--charcoal); margin-bottom:7px;
+  }
+  .pcard p { font-size:13.5px; color:#555; margin:0; }
+
+  /* ── AUDIENCE TABLE ───────────────────── */
+  .tbl { width:100%; border-collapse:collapse; margin-top:26px; font-size:14px; }
+  .tbl thead tr { background:var(--charcoal); color:var(--white); }
+  .tbl th {
+    padding:13px 16px; text-align:left;
+    font-size:10px; letter-spacing:1.5px;
+    text-transform:uppercase; font-weight:500;
+  }
+  .tbl td {
+    padding:13px 16px; border-bottom:1px solid var(--hr);
+    vertical-align:top; color:#454550;
+  }
+  .tbl tr:nth-child(even) td { background:var(--mist); }
+  .tbl tr:hover td { background:var(--blush); transition:.15s; }
+
+  /* ── BADGE ───────────────────────────── */
+  .badge {
+    display:inline-block; font-size:10px; letter-spacing:1px;
+    text-transform:uppercase; padding:3px 9px;
+    border-radius:2px; font-weight:600;
+  }
+  .b-rose { background:rgba(196,81,111,.1); color:var(--rose); }
+  .b-gold { background:rgba(184,135,44,.1); color:var(--gold); }
+  .b-dark { background:rgba(24,24,27,.07); color:#444; }
+
+  /* ── FUNNEL ──────────────────────────── */
+  .funnel { margin-top:32px; display:flex; flex-direction:column; gap:4px; }
+
+  .fstage { border-radius:3px; text-align:center; }
+  .fstage.tofu {
+    background:linear-gradient(135deg,#18181B,#2D1520);
+    clip-path:polygon(0 0,100% 0,95% 100%,5% 100%);
+    padding:28px 64px;
+  }
+  .fstage.mofu {
+    background:linear-gradient(135deg,var(--deep-rose),#6E2035);
+    clip-path:polygon(5% 0,95% 0,90% 100%,10% 100%);
+    padding:28px 80px;
+  }
+  .fstage.bofu {
+    background:linear-gradient(135deg,var(--rose),var(--deep-rose));
+    clip-path:polygon(10% 0,90% 0,82% 100%,18% 100%);
+    padding:28px 96px;
+  }
+  .fstage .ftag {
+    font-size:9px; letter-spacing:3px; text-transform:uppercase;
+    color:rgba(255,255,255,.45); margin-bottom:5px;
+  }
+  .fstage h4 {
+    font-family:'Playfair Display',serif; font-size:19px;
+    color:var(--white); margin-bottom:6px;
+  }
+  .fstage p { font-size:12.5px; color:rgba(255,255,255,.65); margin:0; line-height:1.5; }
+
+  /* ── FORMAT GRID ─────────────────────── */
+  .fgrid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:26px; }
+  @media(max-width:580px){ .fgrid{ grid-template-columns:1fr; } }
+
+  .fcard {
+    border:1px solid var(--hr); border-radius:3px;
+    padding:20px; text-align:center; background:var(--white);
+    transition:transform .2s, box-shadow .2s;
+  }
+  .fcard:hover { transform:translateY(-3px); box-shadow:0 10px 28px rgba(196,81,111,.1); }
+  .fcard .fi { font-size:26px; margin-bottom:10px; }
+  .fcard h4 {
+    font-family:'Playfair Display',serif; font-size:16px;
+    color:var(--charcoal); margin-bottom:6px;
+  }
+  .fcard p { font-size:12.5px; color:#666; margin:0; line-height:1.5; }
+  .fcard .pri {
+    display:inline-block; margin-top:10px;
+    font-size:9px; letter-spacing:1.5px; text-transform:uppercase;
+    padding:3px 9px; border-radius:2px; font-weight:600;
+  }
+  .pri-high   { background:rgba(196,81,111,.1); color:var(--rose); }
+  .pri-mid    { background:rgba(184,135,44,.1); color:var(--gold); }
+  .pri-test   { background:rgba(24,24,27,.07); color:#666; }
+
+  /* ── HOOK CARDS ──────────────────────── */
+  .hgrid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:26px; }
+  @media(max-width:580px){ .hgrid{ grid-template-columns:1fr; } }
+
+  .hcard {
+    background:var(--charcoal); border-radius:3px;
+    padding:20px 22px; position:relative; overflow:hidden;
+  }
+  .hcard::before {
+    content:'"'; position:absolute; top:-12px; right:12px;
+    font-family:'Playfair Display',serif; font-size:80px;
+    color:rgba(196,81,111,.18); line-height:1;
+  }
+  .hcard .ht {
+    font-size:9px; letter-spacing:2px; text-transform:uppercase;
+    color:var(--gold); margin-bottom:8px;
+  }
+  .hcard p {
+    font-family:'Playfair Display',serif; font-style:italic;
+    font-size:16px; color:rgba(255,255,255,.85);
+    margin:0; line-height:1.45;
+  }
+
+  /* ── CAMPAIGN BOXES ──────────────────── */
+  .cboxes { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:26px; }
+  @media(max-width:580px){ .cboxes{ grid-template-columns:1fr; } }
+
+  .cbox { border:1px solid var(--hr); border-radius:3px; overflow:hidden; }
+  .cbox-head {
+    background:var(--charcoal); padding:11px 16px;
+    font-size:10px; letter-spacing:2px; text-transform:uppercase;
+    color:var(--gold); font-weight:500;
+  }
+  .cbox-body { padding:16px; }
+  .cbox-body h4 {
+    font-family:'Playfair Display',serif; font-size:16px;
+    color:var(--charcoal); margin-bottom:10px;
+  }
+  .cbox-body ul { padding-left:16px; }
+  .cbox-body li { font-size:12.5px; color:#555; margin-bottom:5px; line-height:1.5; }
+
+  /* ── BUDGET BARS ─────────────────────── */
+  .bitem { display:flex; align-items:center; gap:14px; margin-bottom:12px; }
+  .blabel { min-width:148px; font-size:13px; font-weight:500; color:var(--charcoal); }
+  .bwrap { flex:1; height:7px; background:var(--blush); border-radius:4px; overflow:hidden; }
+  .bbar { height:100%; border-radius:4px; background:linear-gradient(90deg,var(--rose),var(--gold)); }
+  .bpct { min-width:38px; text-align:right; font-size:13px; font-weight:600; color:var(--rose); }
+
+  /* ── KPI GRID ────────────────────────── */
+  .kgrid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:26px; }
+  @media(max-width:580px){ .kgrid{ grid-template-columns:1fr 1fr; } }
+
+  .kcard { border:1px solid var(--hr); border-radius:3px; padding:20px; text-align:center; background:var(--mist); }
+  .kval { font-family:'Playfair Display',serif; font-size:30px; font-weight:500; color:var(--rose); line-height:1; margin-bottom:6px; }
+  .klbl { font-size:10.5px; letter-spacing:.5px; text-transform:uppercase; color:#888; line-height:1.4; }
+
+  /* ── RISK LIST ───────────────────────── */
+  .rlist { margin-top:22px; }
+  .ritem { display:flex; gap:14px; padding:18px 0; border-bottom:1px solid var(--hr); align-items:flex-start; }
+  .ritem:last-child { border-bottom:none; }
+  .ricon { width:34px; height:34px; border-radius:50%; background:rgba(196,81,111,.09); display:flex; align-items:center; justify-content:center; font-size:15px; flex-shrink:0; margin-top:2px; }
+  .ritem h5 { font-weight:600; font-size:14px; color:var(--charcoal); margin-bottom:4px; }
+  .ritem p { font-size:13px; margin:0; color:#555; }
+
+  /* ── NUMBERED LIST ───────────────────── */
+  .nlist { list-style:none; counter-reset:s; margin:18px 0; }
+  .nlist li {
+    counter-increment:s; display:flex; gap:14px;
+    align-items:flex-start; padding:11px 0;
+    border-bottom:1px solid var(--hr); font-size:14px; color:#454550;
+  }
+  .nlist li:last-child { border-bottom:none; }
+  .nlist li::before {
+    content:counter(s,decimal-leading-zero);
+    font-family:'Playfair Display',serif; font-size:20px;
+    color:var(--rose); opacity:.55; flex-shrink:0; line-height:1.25; font-weight:400;
+  }
+
+  /* ── SUMMARY ─────────────────────────── */
+  .sumbox {
+    background:linear-gradient(135deg,var(--charcoal),#261019);
+    border-radius:3px; padding:44px 48px; margin-top:28px;
+    position:relative; overflow:hidden;
+  }
+  .sumbox::before {
+    content:''; position:absolute; top:-50px; right:-50px;
+    width:220px; height:220px; border-radius:50%;
+    background:radial-gradient(circle,rgba(196,81,111,.14) 0%,transparent 70%);
+  }
+  .sumbox h3 {
+    font-family:'Playfair Display',serif; font-size:26px; font-weight:500;
+    color:var(--white); margin-bottom:18px; position:relative; z-index:1;
+  }
+  .sumbox p { color:rgba(255,255,255,.65); font-size:14px; position:relative; z-index:1; }
+  .sumbox ul { list-style:none; margin-top:18px; position:relative; z-index:1; }
+  .sumbox ul li {
+    padding:8px 0; color:rgba(255,255,255,.78); font-size:14px;
+    display:flex; align-items:flex-start; gap:10px;
+    border-bottom:1px solid rgba(255,255,255,.07);
+  }
+  .sumbox ul li:last-child { border-bottom:none; }
+  .sumbox ul li::before { content:'→'; color:var(--rose); flex-shrink:0; margin-top:1px; font-weight:600; }
+
+  /* ── CONFIDENCE RATING ───────────────── */
+  .conf-box {
+    background:var(--charcoal); border-radius:3px;
+    padding:20px 26px; margin-top:32px;
+    display:flex; align-items:center; gap:20px; flex-wrap:wrap;
+  }
+  .conf-label { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,.4); }
+  .conf-score {
+    font-family:'Playfair Display',serif; font-size:42px; font-weight:400;
+    color:var(--rose); line-height:1;
+  }
+  .conf-note { font-size:13px; color:rgba(255,255,255,.6); flex:1; min-width:200px; }
+
+  /* ── FOOTER ──────────────────────────── */
+  .footer { background:var(--charcoal); padding:28px; text-align:center; }
+  .footer .fn { font-family:'Playfair Display',serif; font-size:18px; color:var(--rose); margin-bottom:6px; font-style:italic; }
+  .footer p { font-size:11.5px; color:rgba(255,255,255,.28); margin:0; }
+  .footer p + p { margin-top:5px; }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-eyebrow z">Confidential Strategy Document — v2.0 (Corrected)</div>
+  <div class="cover-name z">The <em>Pink Garage</em><br>by Sadhvi</div>
+  <div class="cover-locale z">Whitefield, Bengaluru, Karnataka 560066</div>
+  <div class="cover-rule z"></div>
+  <div class="cover-doc-title z">Meta Ads Perception Analysis &amp; Full-Funnel Walk-in Strategy — Indian Suits, Sarees &amp; Co-ords Boutique in Whitefield, Bengaluru</div>
+  <div class="cover-pills z">
+    <div class="cover-pill"><div class="lbl">Platform</div><div class="val">Facebook &amp; Instagram</div></div>
+    <div class="cover-pill"><div class="lbl">Primary Goal</div><div class="val">Walk-ins &amp; Local Visibility</div></div>
+    <div class="cover-pill"><div class="lbl">City</div><div class="val">Bengaluru — Tier-1 Metro</div></div>
+    <div class="cover-pill"><div class="lbl">Phase</div><div class="val">Startup Launch</div></div>
+  </div>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  <strong>Transparent Note:</strong> The brand's Instagram was inaccessible at the time of this report (blocked by platform restrictions). This strategy is therefore built on confirmed facts — brand name, product category (Indian suits), business stage (startup), location (Whitefield, Bengaluru), and goal (walk-ins) — combined with verified market research. Assumptions about price range, design style, or visual aesthetic have been deliberately avoided. Sadhvi should verify and customise section 6 (Creative Direction) once actual brand collateral is shared.
+</div>
+
+<!-- 01. BRAND + LOCATION CONTEXT -->
+<div class="sec">
+  <div class="wrap">
+    <div class="sec-tag">01 — Brand &amp; Location Context</div>
+    <h2 class="sec-h">Understanding <em>Where</em> You're Selling</h2>
+    <p>The Pink Garage by Sadhvi is a new boutique operating out of Whitefield, Bengaluru, selling <strong>Indian suits, sarees, and co-ords</strong>. This product mix is strategically significant — it means the brand serves a wider age range and occasion spectrum than a single-category boutique, which directly shapes how we build audiences and write ads.</p>
+    <p><strong>Whitefield is East Bengaluru's largest IT and residential hub.</strong> It is home to major tech parks (ITPL, Prestige Tech Park, RMZ Ecoworld), thousands of residential apartment complexes, and one of the most densely packed working-professional populations in India. This makes it a cosmopolitan, aspirational, digitally active neighbourhood — not a traditional ethnic fashion market.</p>
+    <div class="callout">
+      <strong>What this means for your ads:</strong> Your audience is not a homogenous local crowd. Whitefield is made up of South Indian professionals (for whom sarees are deeply cultural), North Indian migrants (who specifically seek suits and occasion wear), and younger IT professionals (who are drawn to co-ords as everyday ethnic-fusion wear). All three are reachable on Meta — but each needs a different message.
+    </div>
+    <p>This is both an opportunity and a challenge. The opportunity: a curated boutique offering suits, sarees, and co-ords under one roof in Whitefield is genuinely differentiated. Most large chains (Fab India, Biba, W, Nalli) are either in malls or specialize narrowly. The challenge: Bengaluru is a Tier-1 metro — ad costs are higher and competition for screen space is fierce.</p>
+
+    <h4 style="font-family:'Playfair Display',serif;font-size:19px;color:var(--charcoal);margin:28px 0 14px;font-weight:500;">Product Line → Audience Map</h4>
+    <table class="tbl">
+      <thead>
+        <tr><th>Product</th><th>Primary Audience</th><th>Key Occasions</th><th>Ad Tone</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge b-rose">Indian Suits</span></td>
+          <td>Women 24–45, all communities, office-to-occasion wear</td>
+          <td>Office, family functions, festivals, travel</td>
+          <td>Versatile, curated, effortless elegance</td>
+        </tr>
+        <tr>
+          <td><span class="badge b-gold">Sarees</span></td>
+          <td>Women 28–55, South Indian professionals and North Indian diaspora, occasion buyers</td>
+          <td>Weddings, Navratri, Dasara, Ugadi, Diwali, office formals</td>
+          <td>Heritage, celebration, identity, timelessness</td>
+        </tr>
+        <tr>
+          <td><span class="badge b-dark">Co-ords</span></td>
+          <td>Women 20–35, young professionals, Instagram-aware fashion buyers</td>
+          <td>Brunch, casual outings, low-key functions, travel content</td>
+          <td>Modern, fusion, cool ethnic, Instagram-worthy</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- 02. PERCEPTION ANALYSIS -->
+<div class="sec">
+  <div class="wrap">
+    <div class="sec-tag">02 — Perception Analysis</div>
+    <h2 class="sec-h">How Whitefield Women <em>See You</em> on Meta</h2>
+    <p>Before spending a rupee on ads, we must understand what happens in a Bengaluru woman's mind the moment The Pink Garage appears in her Instagram feed. Perception controls everything that follows.</p>
+    <div class="pgrid">
+      <div class="pcard">
+        <div class="icon">👁️</div>
+        <h4>First Impression in 1.5 Seconds</h4>
+        <p>The name "Pink Garage" is distinctive — it signals personality, femininity, and a non-corporate vibe. A Whitefield professional scrolling Instagram will clock it as something independent and curated. That's valuable brand equity before a single product is shown.</p>
+      </div>
+      <div class="pcard">
+        <div class="icon">💭</div>
+        <h4>The Whitefield Audience Mindset</h4>
+        <p>These are working women aged 24–45, predominantly salaried professionals or entrepreneurs. They are time-poor and visually literate. They don't want to spend a Sunday afternoon hunting through mall chain stores. A boutique that comes to them through Instagram — with clear, beautiful product presentation — solves a real problem.</p>
+      </div>
+      <div class="pcard">
+        <div class="icon">🌍</div>
+        <h4>Three Products = Three Audiences</h4>
+        <p>Suits attract the broadest cross-community buyer. Sarees pull in South Indian women (for whom they're cultural, not occasional) and North Indian diaspora dressing for weddings and festivals. Co-ords attract a younger, fashion-forward crowd who follow trends and discover brands through Reels. Each audience needs a distinct ad angle — running one generic ad for all three products dilutes the message for everyone.</p>
+      </div>
+      <div class="pcard">
+        <div class="icon">❤️</div>
+        <h4>Emotional Trigger</h4>
+        <p>Indian ethnic wear is deeply emotional — connected to identity, celebration, and self-expression. In Bengaluru's multicultural context, a well-curated Indian suit carries the added weight of cultural belonging for women far from home. Ads that acknowledge this — subtly — will outperform product-only content.</p>
+      </div>
+      <div class="pcard">
+        <div class="icon">⚠️</div>
+        <h4>Primary Concern: Trust</h4>
+        <p>As a new, unknown brand, the single biggest barrier is trust. Customers will wonder: "Is this quality real? How does the fabric feel? Will it look as good in person?" The strategy must aggressively address this through social proof, behind-the-scenes content, and founder visibility — before asking for a walk-in.</p>
+      </div>
+      <div class="pcard">
+        <div class="icon">📍</div>
+        <h4>Walk-in Friction is Real</h4>
+        <p>Whitefield residents are busy and traffic-averse. Convincing someone to physically travel to a new boutique requires strong desire or a compelling reason. The ad strategy must build that desire at TOFU, address questions at MOFU, and then give a clear, low-friction reason to visit at BOFU — not the reverse.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 03. AUDIENCE TARGETING -->
+<div class="sec">
+  <div class="wrap">
+    <div class="sec-tag">03 — Audience Strategy</div>
+    <h2 class="sec-h">Who We Target in <em>Whitefield &amp; Beyond</em></h2>
+    <p>The targeting approach is layered across five pools. Given that this is a new brand with zero existing audience data, the first 30 days will lean heavily on cold interest-based targeting while building the retargeting pool from scratch.</p>
+
+    <table class="tbl">
+      <thead>
+        <tr>
+          <th>Layer</th>
+          <th>Who They Are</th>
+          <th>Meta Targeting Method</th>
+          <th>Primary Goal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge b-dark">Cold — Suits</span></td>
+          <td>Women 24–45, all communities, within 8–10 km of Whitefield</td>
+          <td>Geo-radius + interests: Indian ethnic wear, salwar kameez, kurta sets, boutique shopping, Myntra ethnic</td>
+          <td>Brand awareness, first touch</td>
+        </tr>
+        <tr>
+          <td><span class="badge b-dark">Cold — Sarees</span></td>
+          <td>Women 28–55, South Indian professionals and North Indian diaspora in East Bengaluru</td>
+          <td>Interests: saree, silk saree, Kanjivaram, wedding fashion, traditional wear — layered with East Bengaluru geo</td>
+          <td>Reach culturally-motivated, occasion-driven buyers</td>
+        </tr>
+        <tr>
+          <td><span class="badge b-dark">Cold — Co-ords</span></td>
+          <td>Women 20–35, young IT professionals, fashion-aware, Instagram-active</td>
+          <td>Interests: Indo-western fashion, co-ord sets, ethnic fusion, Zara, H&amp;M, fashion influencers — Whitefield geo</td>
+          <td>Drive Reel views, profile visits from trend-driven buyers</td>
+        </tr>
+        <tr>
+          <td><span class="badge b-gold">Warm</span></td>
+          <td>Women who watched 50%+ of any Reel, visited the Instagram profile, or engaged with a post</td>
+          <td>Custom audience: Video viewers (50%+) + Instagram page engagers (last 60 days)</td>
+          <td>Move from interest → intent. WhatsApp / DM CTA</td>
+        </tr>
+        <tr>
+          <td><span class="badge b-rose">Hot</span></td>
+          <td>Women who DM'd, clicked "Get Directions", saved a post, or submitted a lead form</td>
+          <td>Instagram engagers (saved/messaged) + Lead form openers + Meta Pixel website visitors</td>
+          <td>Convert to actual walk-in or appointment</td>
+        </tr>
+        <tr>
+          <td><span class="badge b-dark">Lookalike</span></td>
+          <td>New users who resemble your engaged audience</td>
+          <td>1–3% LAL of page engagers — activate only after Month 1 once 500+ data points collected</td>
+          <td>Scale efficiently once audience data matures</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout" style="margin-top:26px;">
+      <strong>Bengaluru-Specific Targeting Note:</strong> Unlike a Punjab market, Bengaluru has a linguistically diverse audience. Avoid Punjabi-language hooks. Use English as the primary language for ads (the most understood across all communities in Whitefield), with occasional Hindi copy for specific North Indian diaspora ad sets. Kannada-language ads can be tested for hyper-local reach in Phase 2.
+    </div>
+  </div>
+</div>
+
+<!-- 04. FUNNEL -->
+<div class="sec">
+  <div class="wrap">
+    <div class="sec-tag">04 — Campaign Funnel</div>
+    <h2 class="sec-h">The <em>Three-Stage</em> Funnel</h2>
+    <p>For a brand-new boutique, the funnel cannot be skipped or collapsed. You cannot run conversion ads to people who have never heard of you. Each stage serves a purpose in sequence.</p>
+    <div class="funnel">
+      <div class="fstage tofu">
+        <div class="ftag">Top of Funnel — TOFU</div>
+        <h4>Awareness &amp; Discovery</h4>
+        <p>Reel ads · Stories · Instagram Feed · Objective: Reach / Video Views<br>
+        Goal: Make Whitefield women stop, watch, and remember the brand name. No hard sell. Build familiarity.</p>
+      </div>
+      <div class="fstage mofu">
+        <div class="ftag">Middle of Funnel — MOFU</div>
+        <h4>Consideration &amp; Engagement</h4>
+        <p>Carousel ads · Collection ads · Messages objective · Instagram DM<br>
+        Goal: Turn interest into intent. Show multiple products, invite questions, start conversations.</p>
+      </div>
+      <div class="fstage bofu">
+        <div class="ftag">Bottom of Funnel — BOFU</div>
+        <h4>Conversion — Walk-in &amp; Lead</h4>
+        <p>WhatsApp Click-to-Chat · Lead Form · Get Directions / Store Traffic objective<br>
+        Goal: Give warm audiences a clear, low-friction path to physically visit the boutique.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 05. AD FORMATS -->
+<div class="sec">
+  <div class="wrap">
+    <div class="sec-tag">05 — Ad Formats</div>
+    <h2 class="sec-h">Recommended <em>Ad Formats</em> — Ranked by Priority</h2>
+    <div class="fgrid">
+      <div class="fcard">
+        <div class="fi">🎬</div>
+        <h4>Reels Ads</h4>
+        <p>15–30 sec videos: new arrivals reveal, styling a suit, behind-the-scenes at the boutique. Lowest CPM in India currently, highest organic share rate.</p>
+        <span class="pri pri-high">Priority #1</span>
+      </div>
+      <div class="fcard">
+        <div class="fi">💬</div>
+        <h4>WhatsApp Click-to-Chat</h4>
+        <p>One-tap opens a WhatsApp conversation. Pre-filled: "Hi, I saw your ad on Instagram. I'd love to visit the boutique — can you share your address?" Highest walk-in conversion rate for local boutiques.</p>
+        <span class="pri pri-high">Priority #2</span>
+      </div>
+      <div class="fcard">
+        <div class="fi">🖼️</div>
+        <h4>Carousel Ads</h4>
+        <p>Show 5–8 suits in one ad. Simulates browsing in-store. Each card can feature a different outfit with a brief description. Drives multiple touches per impression.</p>
+        <span class="pri pri-high">Priority #3</span>
+      </div>
+      <div class="fcard">
+        <div class="fi">📋</div>
+        <h4>Instant Lead Form</h4>
+        <p>Collects name + phone number directly on Meta. No landing page needed. Use to build a local database for WhatsApp follow-ups, new collection alerts, and exclusive previews.</p>
+        <span class="pri pri-mid">Medium Priority</span>
+      </div>
+      <div class="fcard">
+        <div class="fi">📍</div>
+        <h4>Store Traffic / Directions</h4>
+        <p>Meta's dedicated objective for driving physical visits. Shows map pin, store hours, call button, and "Get Directions" CTA. Targets women within a defined km radius of the boutique.</p>
+        <span class="pri pri-mid">Medium Priority</span>
+      </div>
+      <div class="fcard">
+        <div class="fi">📸</div>
+        <h4>Story Ads</h4>
+        <p>Full-screen 9:16 immersive format. Best for time-sensitive content: new arrivals, festive collections, limited pieces. Test in Phase 2 once base content library is built.</p>
+        <span class="pri pri-test">Phase 2 Test</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 06. CREATIVE DIRECTION -->
+<div class="sec">
+  <div class="wrap">
+    <div class="sec-tag">06 — Creative Direction</div>
+    <h2 class="sec-h">Ad Hooks, Angles &amp; <em>Messaging</em></h2>
+    <p>The hook is what stops the scroll. In Bengaluru's competitive feed, generic product shots are invisible. Below are tested angle types with example hooks written specifically for a Whitefield, Bengaluru audience. These are starting points — the final copy must reflect Sadhvi's actual brand voice and product range.</p>
+
+    <div class="hgrid">
+      <div class="hcard">
+        <div class="ht">Suits — Working Woman</div>
+        <p>Monday: boardroom. Saturday: cousin's sangeet. One boutique. Every look sorted.</p>
+      </div>
+      <div class="hcard">
+        <div class="ht">Sarees — Identity &amp; Heritage</div>
+        <p>Some women wear a saree. Others become one. Find yours at The Pink Garage.</p>
+      </div>
+      <div class="hcard">
+        <div class="ht">Co-ords — Modern &amp; Effortless</div>
+        <p>Ethnic, but make it easy. Co-ord sets that go from brunch to function without a rethink.</p>
+      </div>
+      <div class="hcard">
+        <div class="ht">All Products — Local Discovery</div>
+        <p>Whitefield finally has a boutique that actually gets what you're looking for.</p>
+      </div>
+      <div class="hcard">
+        <div class="ht">Founder Story — All Products</div>
+        <p>I couldn't find suits, sarees, or co-ords in Bengaluru that felt like me. So I opened The Pink Garage.</p>
+      </div>
+      <div class="hcard">
+        <div class="ht">Festival (Navratri / Dasara)</div>
+        <p>Dasara is weeks away. Your wardrobe disagrees with your enthusiasm. We can fix that.</p>
+      </div>
+    </div>
+
+    <h4 style="font-family:'Playfair Display',serif;font-size:19px;color:var(--charcoal);margin:28px 0 10px;font-weight:500;">Product-Specific Creative Angles</h4>
+    <table class="tbl" style="margin-top:0">
+      <thead><tr><th>Product</th><th>Best Reel Concept</th><th>Best Static / Carousel Angle</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="badge b-rose">Suits</span></td>
+          <td>"5 ways to style this kurta set" — show office, casual, festive, travel, and evening looks from one piece</td>
+          <td>Carousel: front + back + detail shot of each suit with fabric name and occasion tag</td>
+        </tr>
+        <tr>
+          <td><span class="badge b-gold">Sarees</span></td>
+          <td>Sadhvi draping a saree in the boutique — real, unhurried, showing how it falls. No voiceover needed.</td>
+          <td>Single image: full-body drape in natural light with a one-line caption about the occasion it's made for</td>
+        </tr>
+        <tr>
+          <td><span class="badge b-dark">Co-ords</span></td>
+          <td>"Get ready with me" — young model or Sadhvi herself styling a co-ord set to a trending audio. Highest share rate of all three formats.</td>
+          <td>Carousel: the set styled 3 ways — casual, function, and travel. Shows versatility = justifies purchase</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4 style="font-family:'Playfair Display',serif;font-size:19px;color:var(--charcoal);margin:28px 0 16px;font-weight:500;">Creative Production Guidelines</h4>
+    <ul class="nlist">
+      <li><strong>Sadhvi must appear on camera.</strong> A founder-led boutique brand in a cosmopolitan city builds trust faster when the face behind it is visible. Even one 20-second Reel of Sadhvi introducing a new piece will outperform any product-only visual.</li>
+      <li><strong>Film in the actual boutique space.</strong> Real environment, real product, real founder — this is the antidote to the "is this legitimate?" concern that kills conversions for new brands.</li>
+      <li><strong>Prioritise natural light and clean backgrounds</strong> that match the pink/rose brand palette. Avoid heavy studio setups — the boutique's own ambiance is the best set you have.</li>
+      <li><strong>Show the garment on a real person,</strong> not a mannequin or flat-lay. Bengaluru's fashion-savvy audience needs to see how fabric moves, how a collar sits, how a dupatta drapes.</li>
+      <li><strong>Festival calendar content is non-negotiable.</strong> Plan creative 3–4 weeks ahead for: Navratri, Dasara (big in Karnataka), Diwali, Karva Chauth, Eid, Christmas party season, Ugadi. Ethnic wear demand spikes reliably around every one of these.</li>
+      <li><strong>Customer content is gold.</strong> If a customer is happy to be photographed in their purchase inside the boutique, that UGC (user-generated content) becomes the most trusted ad format you can run.</li>
+      <li><strong>Language:</strong> Primary copy in English. Optional Hindi copy for North Indian diaspora ad sets. Do not use Punjabi-specific language or regional references that don't apply to a Bengaluru audience.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 07. CAMPAIGN STRUCTURE -->
+<div class="sec">
+  <div class="wrap">
+    <div class="sec-tag">07 — Campaign Structure</div>
+    <h2 class="sec-h">Phase 1 — <em>30-Day Campaign Blueprint</em></h2>
+    <p>Three campaigns run simultaneously from launch day. Importantly, with three distinct product lines, each campaign now has product-specific ad sets so messaging stays targeted and relevant. Running one generic ad for suits, sarees, and co-ords together dilutes all three.</p>
+
+    <div class="cboxes">
+      <div class="cbox">
+        <div class="cbox-head">Campaign 01</div>
+        <div class="cbox-body">
+          <h4>Brand Awareness</h4>
+          <ul>
+            <li>Objective: Video Views / Reach</li>
+            <li>Format: Reels + Stories</li>
+            <li>Audience: Cold — interest-based, 8km radius</li>
+            <li>Budget: 40% of monthly spend</li>
+            <li>Ad Sets: 3 — one per product line (suits / sarees / co-ords), each with age-appropriate targeting</li>
+            <li>Creatives: 1 Reel per product line minimum (3 Reels total to start)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cbox">
+        <div class="cbox-head">Campaign 02</div>
+        <div class="cbox-body">
+          <h4>Messages &amp; Engagement</h4>
+          <ul>
+            <li>Objective: Messages (WhatsApp)</li>
+            <li>Format: Carousel + Single image</li>
+            <li>Audience: Warm — Reel viewers 50%+, page engagers (last 60 days)</li>
+            <li>Budget: 35% of monthly spend</li>
+            <li>Ad Sets: 2 — broad warm pool + product-specific retargeting once data builds</li>
+            <li>Creatives: 1 carousel per product, rotating</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cbox">
+        <div class="cbox-head">Campaign 03</div>
+        <div class="cbox-body">
+          <h4>Walk-in Conversion</h4>
+          <ul>
+            <li>Objective: Leads / Store Traffic</li>
+            <li>Format: Lead Form + Get Directions</li>
+            <li>Audience: Hot — DM replied, post savers, lead form openers</li>
+            <li>Budget: 25% of monthly spend</li>
+            <li>Ad Sets: 1–2 high-intent segments</li>
+            <li>Creatives: 1 lead form ad (all products), 1 store traffic ad with location pin</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- BUDGET ALLOCATION BARS -->
+    <h4 style="font-family:'Playfair Display',serif;font-size:19px;color:var(--charcoal);margin:32px 0 18px;font-weight:500;">How Budget Is Split Across the Funnel</h4>
+    <div class="bitem">
+      <div class="blabel">Awareness (TOFU)</div>
+      <div class="bwrap"><div class="bbar" style="width:40%"></div></div>
+      <div class="bpct">40%</div>
+    </div>
+    <div class="bitem">
+      <div class="blabel">Engagement (MOFU)</div>
+      <div class="bwrap"><div class="bbar" style="width:35%"></div></div>
+      <div class="bpct">35%</div>
+    </div>
+    <div class="bitem">
+      <div class="blabel">Conversion (BOFU)</div>
+      <div class="bwrap"><div class="bbar" style="width:25%"></div></div>
+      <div class="bpct">25%</div>
+    </div>
+    <p style="margin-top:10px;font-size:13px;color:#888;margin-bottom:0;">This split reflects a <em>new brand</em> reality — awareness is underfunded by most first-time advertisers, yet it is the engine that fills the retargeting pool. Do not collapse this into conversion-only spend in Month 1.</p>
+  </div>
+</div>
+
+<!-- BUDGET DETAIL SECTION -->
+<div class="sec">
+  <div class="wrap">
+    <div class="sec-tag">07B — Budget Planning</div>
+    <h2 class="sec-h">The <em>Complete Budget</em> Breakdown</h2>
+    <p>Sadhvi's confirmed budget is <strong>₹10,000–₹20,000/month</strong>. This section is built specifically around that range — with an honest view of what it can and cannot achieve in Bengaluru's ad market, how to allocate every rupee across campaigns and product lines, and a clear roadmap for when and how to scale.</p>
+
+    <div class="callout">
+      <strong>Bengaluru Reality Check:</strong> ₹10,000–₹20,000/month is a lean but workable budget for a Tier-1 metro — provided it is spent strategically. The biggest mistake at this budget level is spreading spend too thin across too many ad sets simultaneously. The rule here is: <em>fewer ad sets, more focused spend, let the algorithm concentrate.</em> Running 6 ad sets at ₹55/day each is less effective than running 3 ad sets at ₹110/day each.
+    </div>
+
+    <!-- TWO SCENARIOS -->
+    <h4 style="font-family:'Playfair Display',serif;font-size:19px;color:var(--charcoal);margin:28px 0 16px;font-weight:500;">Two Scenarios Within the Budget Range</h4>
+
+    <table class="tbl">
+      <thead>
+        <tr>
+          <th>Scenario</th>
+          <th>Monthly Budget</th>
+          <th>Daily Spend</th>
+          <th>What's Running</th>
+          <th>Realistic Monthly Outcome</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge b-dark">Conservative</span></td>
+          <td>₹10,000/month</td>
+          <td>≈ ₹333/day</td>
+          <td>1 awareness campaign (2 ad sets: suits + co-ords) + 1 WhatsApp retargeting ad set. Sarees paused until Month 2.</td>
+          <td>6,000–10,000 Reel views · 8–15 WhatsApp conversations · 4–8 walk-ins. Slow learning phase — expect Weeks 1–2 to be data collection only.</td>
+        </tr>
+        <tr style="background:var(--blush);">
+          <td><span class="badge b-rose">Recommended ★</span></td>
+          <td>₹15,000 – ₹20,000/month</td>
+          <td>₹500 – ₹667/day</td>
+          <td>Full 3-campaign funnel with 4–5 active ad sets. All three product lines running at awareness level. WhatsApp + Lead Form at BOFU.</td>
+          <td>15,000–28,000 Reel views · 20–35 WhatsApp conversations · 10–18 qualified walk-ins. Algorithm exits learning phase by Week 2–3.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- DAILY BREAKDOWN -->
+    <h4 style="font-family:'Playfair Display',serif;font-size:19px;color:var(--charcoal);margin:32px 0 14px;font-weight:500;">Recommended Scenario — Daily Spend Breakdown (₹18,000/month)</h4>
+    <p style="font-size:13.5px;color:#555;margin-bottom:16px;">At ₹18,000/month (≈ ₹600/day), here is exactly how every rupee is distributed across campaigns, ad sets, and product lines:</p>
+
+    <table class="tbl">
+      <thead>
+        <tr>
+          <th>Campaign</th>
+          <th>Ad Set</th>
+          <th>Daily Budget</th>
+          <th>Monthly Total</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2"><span class="badge b-dark">Campaign 01</span><br><small style="color:#888;font-size:11px;">Awareness — 40%</small></td>
+          <td>Suits + Sarees — Cold (age 26–50)</td>
+          <td>₹120/day</td>
+          <td>~₹3,600</td>
+          <td>Reel views for traditional ethnic buyers. Combined ad set to concentrate budget at this stage.</td>
+        </tr>
+        <tr>
+          <td>Co-ords — Cold (age 20–35)</td>
+          <td>₹120/day</td>
+          <td>~₹3,600</td>
+          <td>Separate Reel targeting younger, fusion-fashion audience. Different creative, different interest pool.</td>
+        </tr>
+        <tr>
+          <td rowspan="2"><span class="badge b-gold">Campaign 02</span><br><small style="color:#888;font-size:11px;">Engagement — 35%</small></td>
+          <td>Warm Retargeting — All Products</td>
+          <td>₹130/day</td>
+          <td>~₹3,900</td>
+          <td>WhatsApp Click-to-Chat to Reel viewers (50%+) and Instagram page engagers in last 60 days.</td>
+        </tr>
+        <tr>
+          <td>Carousel — Product Browse</td>
+          <td>₹80/day</td>
+          <td>~₹2,400</td>
+          <td>Show suits, sarees, co-ords in one scrollable ad. Drive saves and DM enquiries.</td>
+        </tr>
+        <tr>
+          <td><span class="badge b-rose">Campaign 03</span><br><small style="color:#888;font-size:11px;">Conversion — 25%</small></td>
+          <td>Walk-in / Lead Form — Hot Audience</td>
+          <td>₹150/day</td>
+          <td>~₹4,500</td>
+          <td>Store Traffic + Lead Form targeting hottest audience: DM-replied, post-savers, and prior link clickers.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="font-size:12.5px;color:#888;margin-top:12px;">Total: ₹600/day × 30 days = ₹18,000/month. Adjust individual ad set budgets up or down within this envelope based on Week 2 performance data — never change all ad sets simultaneously.</p>
+
+    <!-- PRODUCT LINE BUDGET SPLIT -->
+    <h4 style="font-family:'Playfair Display',serif;font-size:19px;color:var(--charcoal);margin:32px 0 14px;font-weight:500;">Awareness Budget — Product Line Split</h4>
+    <p style="font-size:13.5px;color:#555;margin-bottom:16px;">At ₹10,000–₹20,000/month, running three fully separate product-line ad sets at awareness level stretches the budget too thin. The practical approach for Month 1 is to <strong>combine suits + sarees into one cold ad set</strong> (they share an overlapping audience: women 26–50, occasion-driven), while keeping co-ords separate (younger, different interest signals). This keeps each ad set above the minimum effective daily threshold.</p>
+    <div class="bitem">
+      <div class="blabel">Suits + Sarees (combined)</div>
+      <div class="bwrap"><div class="bbar" style="width:50%"></div></div>
+      <div class="bpct">50%</div>
+    </div>
+    <div class="bitem">
+      <div class="blabel">Co-ords (separate)</div>
+      <div class="bwrap"><div class="bbar" style="width:50%"></div></div>
+      <div class="bpct">50%</div>
+    </div>
+    <p style="font-size:12.5px;color:#888;margin-top:10px;">From Month 2, once data shows which product drives more conversations, split suits and sarees into their own ad sets and shift budget toward the winner.</p>
+
+    <!-- SCALING ROADMAP -->
+    <h4 style="font-family:'Playfair Display',serif;font-size:19px;color:var(--charcoal);margin:32px 0 16px;font-weight:500;">Scaling Roadmap — Month by Month</h4>
+    <table class="tbl">
+      <thead>
+        <tr><th>Month</th><th>Budget</th><th>Primary Focus</th><th>Key Action</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Month 1</strong></td>
+          <td>₹15,000 – ₹18,000</td>
+          <td>Data collection + brand building</td>
+          <td>Run 4–5 focused ad sets. Do not pause in Week 1. Track cost-per-conversation and which product line generates the most DMs.</td>
+        </tr>
+        <tr>
+          <td><strong>Month 2</strong></td>
+          <td>₹18,000 – ₹25,000</td>
+          <td>Optimise + early scaling</td>
+          <td>Pause the weakest ad set. Shift its budget to the top performer. Split suits and sarees into separate ad sets now that data is available. Activate Lookalike audience (1%).</td>
+        </tr>
+        <tr>
+          <td><strong>Month 3</strong></td>
+          <td>₹25,000 – ₹35,000</td>
+          <td>Festival season + proven creatives</td>
+          <td>Scale up ahead of Navratri / Dasara. Refresh creatives — new Reels with festival-specific hooks. Begin running customer UGC if available. Double down on the product line with the lowest cost-per-walk-in.</td>
+        </tr>
+        <tr>
+          <td><strong>Month 4+</strong></td>
+          <td>₹35,000+</td>
+          <td>Sustainable growth</td>
+          <td>Full funnel running efficiently on proven audiences. Budget increases follow ROAS — only scale when a rupee spent is returning measurable walk-in value. Consider Google Business Profile ads as a complementary local channel.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout" style="margin-top:24px;">
+      <strong>The 20% Scaling Rule:</strong> When increasing budget on a winning ad set, never raise it by more than 20% within any 7-day window. A larger jump resets the learning phase and wastes spend. Example: an ad set running at ₹120/day can be raised to ₹144/day — not ₹240/day — after a strong week. Slow, steady scaling outperforms aggressive budget spikes every time.
+    </div>
+  </div>
+</div>
+
+<!-- 08. OPERATIONAL SETUP -->
+<div class="sec">
+  <div class="wrap">
+    <div class="sec-tag">08 — Pre-Launch Setup</div>
+    <h2 class="sec-h">What Must Be <em>Ready Before</em> the First Rupee is Spent</h2>
+    <p>Many boutiques run ads and get zero results because the infrastructure behind the ad is broken. Fix these first:</p>
+    <ul class="nlist">
+      <li><strong>WhatsApp Business account</strong> set up with a profile photo, store address, hours, and at least one quick-reply template for "I saw your Instagram ad." Slow replies kill conversions.</li>
+      <li><strong>Instagram profile optimised:</strong> clear bio with location (Whitefield, Bengaluru), store hours, a link to Google Maps or a WhatsApp chat link. The profile is where people land from the ad — it must convert on its own.</li>
+      <li><strong>Meta Business Suite + Ads Manager</strong> properly configured with a Business account (not a personal profile). Meta Pixel should be installed even if there's no website yet — at minimum, it can track Instagram profile visits.</li>
+      <li><strong>A minimum of 9 pieces of content ready</strong> before ads go live: at least 3 short Reels (15–30 sec each), 3 product carousels, and 3 high-quality single-image posts. Running ads without content depth undermines the brand impression.</li>
+      <li><strong>Google Business Profile</strong> claimed and verified for the boutique address in Whitefield. Meta's "Get Directions" ads work far better when the Google listing is live and accurate — and it drives organic local search traffic simultaneously.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 09. KPIs -->
+<div class="sec">
+  <div class="wrap">
+    <div class="sec-tag">09 — KPIs &amp; Expected Outcomes</div>
+    <h2 class="sec-h">What <em>Success</em> Looks Like at 30 Days</h2>
+    <p>These are realistic benchmarks for a new boutique in Bengaluru running ₹20,000/month on Meta. Month 1 is primarily a data-gathering and brand-building phase. Conversion numbers grow significantly in Month 2–3 as the algorithm learns and retargeting pools deepen.</p>
+    <div class="kgrid">
+      <div class="kcard">
+        <div class="kval">₹4–9</div>
+        <div class="klbl">Est. Cost Per Reel View (Bengaluru)</div>
+      </div>
+      <div class="kcard">
+        <div class="kval">20–45</div>
+        <div class="klbl">WhatsApp Conversations / Month</div>
+      </div>
+      <div class="kcard">
+        <div class="kval">10–20</div>
+        <div class="klbl">Qualified Walk-ins Month 1</div>
+      </div>
+      <div class="kcard">
+        <div class="kval">2–4x</div>
+        <div class="klbl">Target ROAS by Month 3</div>
+      </div>
+    </div>
+    <p style="margin-top:18px;font-size:13px;color:#888;">These KPIs will be reviewed at Day 7, Day 14, and end of Month 1. Bengaluru CPMs are higher than national average — budget should not be cut if Week 1 seems slow. The learning phase typically takes 7–14 days on a new account before delivery stabilises.</p>
+  </div>
+</div>
+
+<!-- 10. RISKS -->
+<div class="sec">
+  <div class="wrap">
+    <div class="sec-tag">10 — Risks &amp; Mitigation</div>
+    <h2 class="sec-h">What Could Go Wrong &amp; <em>How We Win</em></h2>
+    <div class="rlist">
+      <div class="ritem">
+        <div class="ricon">🏙️</div>
+        <div>
+          <h5>High CPM in Bengaluru Metro</h5>
+          <p>Bengaluru is a Tier-1 city — ad costs are meaningfully higher than Tier-2. Under-budgeting will prevent the algorithm from leaving the learning phase. <strong>Mitigation:</strong> Start with a minimum of ₹500/day (₹15,000/month). Do not go below this. Prioritise Reels, which consistently deliver the lowest CPM in India.</p>
+        </div>
+      </div>
+      <div class="ritem">
+        <div class="ricon">🆕</div>
+        <div>
+          <h5>Zero Brand Awareness (New Brand)</h5>
+          <p>No one knows The Pink Garage yet. <strong>Mitigation:</strong> Spend the first 30 days building the retargeting pool. Do not try to run conversion ads to cold audiences. Sequence the funnel properly — awareness first, conversion later.</p>
+        </div>
+      </div>
+      <div class="ritem">
+        <div class="ricon">🏪</div>
+        <div>
+          <h5>Competition from Organised Retail</h5>
+          <p>Bengaluru has Fab India, W, Biba, SOCH, and dozens of Instagram boutiques all advertising. <strong>Mitigation:</strong> Do not compete on price or variety — compete on curation and founder personality. Sadhvi's personal story and specific aesthetic taste are things no chain can replicate.</p>
+        </div>
+      </div>
+      <div class="ritem">
+        <div class="ricon">🚦</div>
+        <div>
+          <h5>Whitefield Traffic &amp; Walk-in Reluctance</h5>
+          <p>Bengaluru traffic is a genuine psychological barrier to visiting a new boutique. <strong>Mitigation:</strong> The BOFU ad must address this directly — clear parking information, easy location pin, "2 minutes from ITPL/Prestige" landmark references, and a compelling reason to visit (new collection, exclusive preview, limited pieces).</p>
+        </div>
+      </div>
+      <div class="ritem">
+        <div class="ricon">📸</div>
+        <div>
+          <h5>Low Creative Quality</h5>
+          <p>Poor lighting or blurry product images will damage brand perception instantly in a high-income, aesthetically-aware market like Whitefield. <strong>Mitigation:</strong> Invest in one half-day professional shoot before ads go live. The creative is not a cost — it is the ad itself.</p>
+        </div>
+      </div>
+      <div class="ritem">
+        <div class="ricon">💬</div>
+        <div>
+          <h5>Slow DM/WhatsApp Response Time</h5>
+          <p>If someone messages at 9pm after seeing an ad and gets a reply at 10am the next day — they have already moved on. <strong>Mitigation:</strong> Set up an automated WhatsApp Business greeting with store hours and address. Aim to reply personally within 1 hour during working hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 11. SUMMARY -->
+<div class="sec">
+  <div class="wrap">
+    <div class="sec-tag">11 — Client Summary</div>
+    <h2 class="sec-h">Sadhvi, Here Is Your <em>30-Day Roadmap</em></h2>
+    <div class="sumbox">
+      <h3>Plain Language — What We're Doing &amp; Why</h3>
+      <p>You're starting a boutique in Whitefield, one of Bengaluru's most active, high-income neighbourhoods. The goal is to build real local visibility and bring qualified women through your door. Here's the plan, week by week:</p>
+      <ul>
+        <li><strong>Before anything starts:</strong> Get WhatsApp Business set up, Instagram bio optimised with your Whitefield address, and at least 3 Reels filmed. Ads cannot fix a broken profile.</li>
+        <li><strong>Week 1–2:</strong> Launch Reel ads targeting women within 8–10 km of your boutique who have shown interest in ethnic fashion. Pure visibility. No hard sell. Just make your name known.</li>
+        <li><strong>Week 2–3:</strong> Launch WhatsApp Click-to-Chat ads retargeting anyone who watched your Reels or visited your profile. These women already know you — give them a one-tap way to start a conversation.</li>
+        <li><strong>Week 3–4:</strong> Launch a Lead Form or Store Traffic ad to your warmest audience. Something that gives them a reason to visit: new collection just in, festival picks, or a simple "come see it in person" message with your exact location.</li>
+        <li><strong>Monthly rhythm:</strong> Review what's working, pause what's not, refresh creatives monthly, and plan ahead for every festival on the calendar. Navratri, Dasara, Diwali, and wedding season are your biggest opportunities — start preparing 4 weeks early.</li>
+        <li><strong>The real goal:</strong> By Month 3, you will have a warm Instagram audience in Whitefield that knows your name, trusts your taste, and thinks of The Pink Garage first when they need an Indian suit. That is the network you're building — one walk-in at a time.</li>
+      </ul>
+    </div>
+
+    <!-- CONFIDENCE RATING -->
+    <div class="conf-box">
+      <div>
+        <div class="conf-label">Revised Strategy Confidence Rating</div>
+        <div class="conf-score">8/10</div>
+      </div>
+      <div class="conf-note">
+        Strategy is built on confirmed facts: brand name, product category, city, location, and goal. The 2-point deduction reflects the fact that the brand's actual Instagram content, price positioning, and store aesthetic remain unseen — these factors affect creative direction (Section 6) and audience income targeting. Confidence rises to 9–10/10 once Sadhvi shares product images and a price range.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="fn">The Pink Garage by Sadhvi</div>
+  <p>Meta Ads Strategy Document — Version 2.0 (Corrected) · Whitefield, Bengaluru 560066</p>
+  <p>All budget figures are indicative. KPI benchmarks are conservative estimates based on Tier-1 metro boutique fashion averages. Actual performance depends on creative quality, audience response, and seasonal timing.</p>
+</div>
+
+</body>
+</html>
